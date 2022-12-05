@@ -380,9 +380,13 @@ MonoBehaviour:
   health: 100
   water: 100
   hunger: 100
+  stamina: 100
   healthslider: {fileID: 1437310335}
   hungerSlider: {fileID: 1513411308}
   waterSlider: {fileID: 455327457}
+  staminaSlider: {fileID: 1360615702}
+  lighting: {fileID: 705507996}
+  time: 0
 --- !u!114 &182071165
 MonoBehaviour:
   m_ObjectHideFlags: 0

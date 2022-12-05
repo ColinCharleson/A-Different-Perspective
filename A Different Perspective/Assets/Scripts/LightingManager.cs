@@ -10,12 +10,14 @@ public class LightingManager : MonoBehaviour
   [SerializeField] private Light DirectionalLight;
   [SerializeField] private Lighting Preset;
     //variables
-  [SerializeField, Range(0,24)] private float TimeofDay = 10;
+  [SerializeField, Range(0,24)] public float TimeofDay = 10;
     private float timeCOunter = 0.1f;
 
 
     private void Update()
     {
+
+
         if(Preset == null)
         {
             return;
@@ -28,6 +30,7 @@ public class LightingManager : MonoBehaviour
             if(TimeofDay >= 20)
             {
                 TimeofDay = 20;
+              
             }
         }
     }
