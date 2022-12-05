@@ -46,13 +46,25 @@ public class PlayerController : MonoBehaviour
 	void Movement()
 	{
 		if (Input.GetKey(KeyCode.W))
+		{
+			stats.stamina -= 0.02f;
 			transform.position += (transform.forward * playerSpeed);
+		}
 		if (Input.GetKey(KeyCode.S))
+		{
+			stats.stamina -= 0.02f;
 			transform.position += (transform.forward * -playerSpeed / 2);
+		}
 		if (Input.GetKey(KeyCode.A))
+		{
+			stats.stamina -= 0.02f;
 			transform.position += (transform.right * -playerSpeed / 1.5f);
+		}
 		if (Input.GetKey(KeyCode.D))
+		{
+			stats.stamina -= 0.02f;
 			transform.position += (transform.right * playerSpeed / 1.5f);
+		}
 
 		// Changes the height position of the player..
 		if (Input.GetButtonDown("Jump") && groundedPlayer)
@@ -85,6 +97,7 @@ public class PlayerController : MonoBehaviour
 				{
 					if (obj.GetComponent<Grabbable>())
 					{
+						stats.stamina -= 5;
 						Inventory.add.twig += obj.transform.GetComponent<Grabbable>().twig;
 						Inventory.add.leaf += obj.transform.GetComponent<Grabbable>().leaf;
 						Inventory.add.mud += obj.transform.GetComponent<Grabbable>().mud;
