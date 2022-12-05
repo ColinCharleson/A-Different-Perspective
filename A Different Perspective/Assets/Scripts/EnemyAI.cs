@@ -13,14 +13,12 @@ public class EnemyAI : MonoBehaviour
 
     public LayerMask whatIsGround, whatIsPlayer;
 
+    public Rigidbody Player;
     //enemy pathing
     private EnemyState enemyState = EnemyState.patrol;
     public Vector3 walkPoint;
     bool walkPointSet;
     public float walkPointRange;
-
-    //Rigid Body
-    public Rigidbody enemy;
 
     //states
     public float sightRange, attackRange;
@@ -29,6 +27,9 @@ public class EnemyAI : MonoBehaviour
     //others
     public Stats stats;
 
+    //Attacking
+    public float timeBetweenAttacks;
+    bool alreadyAttacked;
 
     private void Awake()
     {
@@ -99,19 +100,19 @@ public class EnemyAI : MonoBehaviour
 
     private void Patrolling()
     {
-        
-            if (!walkPointSet) SearchWalkPoint();
 
-            if (walkPointSet)
-            {
-                agent.SetDestination(walkPoint);
-            }
-            Vector3 distanceTowalkPoint = transform.position - walkPoint;
+        if (!walkPointSet) SearchWalkPoint();
 
-            //if walkpoint reached
-            if (distanceTowalkPoint.magnitude < 1f)
-                walkPointSet = false;
-        
+        if (walkPointSet)
+        {
+            agent.SetDestination(walkPoint);
+        }
+        Vector3 distanceTowalkPoint = transform.position - walkPoint;
+
+        //if walkpoint reached
+        if (distanceTowalkPoint.magnitude < 1f)
+            walkPointSet = false;
+
     }
 
     void SearchWalkPoint()
@@ -130,16 +131,48 @@ public class EnemyAI : MonoBehaviour
     }
 
     private void ChasePlayer()
-    {  
-            transform.LookAt(new Vector3(player.position.x, transform.position.y, player.position.z));
-            agent.SetDestination(player.position);
+    {
+        transform.LookAt(new Vector3(player.position.x, transform.position.y, player.position.z));
+        agent.SetDestination(player.position);
     }
 
     private void AttackPlayer()
     {
         transform.LookAt(player);
+
+        if (!alreadyAttacked)
+        {
+            alreadyAttacked = true;
+            Invoke(nameof(ResetAttack), timeBetweenAttacks);
+        }
     }
-    
+
+   private void ResetAttack()
+    {
+        alreadyAttacked = false;
+    }
+
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            stats.health -= 10;
+            KnockBack();
+
+            if (stats.health <= 0)
+            {
+                stats.health = 0;
+                Debug.Log("Death");
+            }
+        }   
+    }
+
+    private void KnockBack()
+    {
+        Player.AddForce((transform.up * 3), ForceMode.Impulse);
+        Player.AddForce((-transform.forward * 60), ForceMode.Impulse);
+    }
     public enum EnemyState
     {
         patrol,
