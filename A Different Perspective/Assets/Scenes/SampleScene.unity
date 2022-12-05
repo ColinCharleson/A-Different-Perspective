@@ -3666,7 +3666,7 @@ Transform:
   - {fileID: 2061182942}
   - {fileID: 921979963}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &182071164
 MonoBehaviour:
@@ -3706,7 +3706,7 @@ MonoBehaviour:
   leaf: 0
   mud: 0
   shelter: {fileID: 6786531583041214824, guid: 8d3d76103af0a0948bcbffab13287247, type: 3}
-  stats: {fileID: 0}
+  stats: {fileID: 182071164}
 --- !u!54 &182071166
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5673,7 +5673,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2022706331621133785, guid: 52183f413deab9b46ac3660cff93a1a7, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2022706331621133785, guid: 52183f413deab9b46ac3660cff93a1a7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10041,7 +10041,7 @@ Transform:
   - {fileID: 1214415810}
   - {fileID: 1680639637}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &571148521 stripped
 Transform:
@@ -10471,7 +10471,7 @@ GameObject:
   - component: {fileID: 599606521}
   - component: {fileID: 599606520}
   m_Layer: 3
-  m_Name: Plane
+  m_Name: Grass
   m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11318,7 +11318,7 @@ Transform:
   m_Children:
   - {fileID: 473855355}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &665141120 stripped
 Transform:
@@ -18243,7 +18243,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1053552010
 PrefabInstance:
@@ -20419,7 +20419,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3312804798064904400, guid: 5f7a32c5215f8c743af2493429a093b7, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3312804798064904400, guid: 5f7a32c5215f8c743af2493429a093b7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24650,7 +24650,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6522120430809956462, guid: 29d060769764d8d46bbcdc9b1f7dfa56, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6522120430809956462, guid: 29d060769764d8d46bbcdc9b1f7dfa56, type: 3}
       propertyPath: m_LocalPosition.x
@@ -32000,7 +32000,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5057528524428162351, guid: 2e84d348312474b448ba064aabb93d4b, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5057528524428162351, guid: 2e84d348312474b448ba064aabb93d4b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -34872,7 +34872,7 @@ GameObject:
   - component: {fileID: 2040263359}
   - component: {fileID: 2040263358}
   m_Layer: 0
-  m_Name: Plane (1)
+  m_Name: DeadGrass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34955,7 +34955,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2040525332
 PrefabInstance:
