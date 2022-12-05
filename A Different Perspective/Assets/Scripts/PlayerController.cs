@@ -97,7 +97,6 @@ public class PlayerController : MonoBehaviour
 				{
 					if (obj.GetComponent<Grabbable>())
 					{
-						stats.stamina -= 5;
 						Inventory.add.twig += obj.transform.GetComponent<Grabbable>().twig;
 						Inventory.add.leaf += obj.transform.GetComponent<Grabbable>().leaf;
 						Inventory.add.mud += obj.transform.GetComponent<Grabbable>().mud;
@@ -105,7 +104,10 @@ public class PlayerController : MonoBehaviour
 						stats.GetFood(obj.transform.GetComponent<Grabbable>().berry);
 
 						if(!obj.name.Contains("Water"))
-						Destroy(obj.transform.gameObject);
+						{
+							stats.stamina -= 5;
+							Destroy(obj.transform.gameObject);
+						}
 					}
 					else
 					{
