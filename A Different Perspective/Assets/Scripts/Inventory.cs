@@ -42,6 +42,6 @@ public class Inventory : MonoBehaviour
 			}
 		}
 
-		display.text = "Inventory: \nTwig: " + twig + "\nLeaf: " + leaf + "\nMud: " + mud;
+		display.text = "Inventory: \nTwig: " + twig + "\nLeaf: " + leaf + "\nMud: " + mud;	
 	}
 }
