@@ -6,12 +6,13 @@ public class Inventory : MonoBehaviour
 {
     public static Inventory add;
 
-    public int twig;
+	public int twig;
     public int leaf;
     public int mud;
     public int berry;
 
 	public GameObject shelter;
+	public Stats stats;
 	public void Awake()
 	{
 		if (!add)
@@ -30,7 +31,12 @@ public class Inventory : MonoBehaviour
 		{
 			if(twig >= 4 && leaf >= 10 && mud >= 40)
 			{
-				Instantiate(shelter, this.transform.position + ((Vector3.forward * 2) - Vector3.up), Quaternion.identity);
+				twig -= 4;
+				leaf -= 10;
+				mud -= 40;
+				 
+				stats.stamina -= 20;
+				Instantiate(shelter, this.transform.position + ((this.transform.forward * 2) - Vector3.up), this.transform.rotation);
 			}
 		}
 	}

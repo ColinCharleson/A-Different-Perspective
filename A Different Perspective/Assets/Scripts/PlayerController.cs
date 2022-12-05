@@ -104,14 +104,13 @@ public class PlayerController : MonoBehaviour
 	{
 		if (Input.GetKey(KeyCode.Space))
 		{
+			if (lighting.TimeofDay >= 20)
+			{
+				lighting.TimeofDay = 5;
+				stats.stamina = 100;
+				DayManager.instance.dayNumber += 1;
+			}
 			inShelter = false;
 		}
-
-		if(lighting.TimeofDay >= 20)
-		{
-			lighting.TimeofDay = 7;
-			stats.stamina = 100;
-		}
-
 	}
 }

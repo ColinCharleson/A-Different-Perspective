@@ -28,6 +28,11 @@ public class LightingManager : MonoBehaviour
             TimeofDay %= 24;
             UpdateLighting(TimeofDay / 24);
         }
+        if (TimeofDay >= 20)
+        {
+            TimeofDay = 20;
+
+        }
     }
 
     private void UpdateLighting(float time)
