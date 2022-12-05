@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Stats : MonoBehaviour
 {
@@ -33,7 +34,7 @@ public class Stats : MonoBehaviour
         HungerStat();
         StaminaStat();
     }
-
+ 
 
     public void WaterStat()
     {
@@ -47,7 +48,7 @@ public class Stats : MonoBehaviour
             if (health <= 0)
             {
                 health = 0;
-                Debug.Log("Death");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
         }
     }
@@ -64,7 +65,7 @@ public class Stats : MonoBehaviour
             if (health <= 0)
             {
                 health = 0;
-                Debug.Log("Death");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
         }
     }
@@ -84,7 +85,7 @@ public class Stats : MonoBehaviour
                 if (health <= 0)
                 {
                     health = 0;
-                    Debug.Log("Death");
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                 }
             }
         }

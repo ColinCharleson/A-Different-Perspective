@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class EnemyAI : MonoBehaviour
 {
@@ -163,7 +164,7 @@ public class EnemyAI : MonoBehaviour
             if (stats.health <= 0)
             {
                 stats.health = 0;
-                Debug.Log("Death");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
         }   
     }
