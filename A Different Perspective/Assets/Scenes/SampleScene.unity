@@ -1563,6 +1563,8 @@ MonoBehaviour:
   mouseSensitivity: 500
   grabArea: {fileID: 2061182941}
   visualCharacter: {fileID: 921979962}
+  lighting: {fileID: 705507996}
+  stats: {fileID: 182071164}
   inShelter: 0
 --- !u!4 &182071163
 Transform:
@@ -1604,7 +1606,6 @@ MonoBehaviour:
   waterSlider: {fileID: 455327457}
   staminaSlider: {fileID: 1360615702}
   lighting: {fileID: 705507996}
-  time: 0
 --- !u!114 &182071165
 MonoBehaviour:
   m_ObjectHideFlags: 0

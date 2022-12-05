@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
 
 	public GameObject grabArea;
 	public GameObject visualCharacter;
+	public LightingManager lighting;
+	public Stats stats;
 
 	public bool inShelter;
 	private void Start()
@@ -105,14 +107,11 @@ public class PlayerController : MonoBehaviour
 			inShelter = false;
 		}
 
-		/*if(night)
+		if(lighting.TimeofDay >= 20)
 		{
-			Time = morning
-			Stats = full
+			lighting.TimeofDay = 7;
+			stats.stamina = 100;
 		}
-		else
-		{
-			Stats += Time.deltaTime * regenspeed
-		}*/
+
 	}
 }
