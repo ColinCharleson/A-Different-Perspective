@@ -25,6 +25,10 @@ public class LightingManager : MonoBehaviour
             TimeofDay += timeCOunter * Time.deltaTime;
             TimeofDay %= 24;
             UpdateLighting(TimeofDay / 24);
+            if(TimeofDay >= 20)
+            {
+                TimeofDay = 20;
+            }
         }
     }
 
