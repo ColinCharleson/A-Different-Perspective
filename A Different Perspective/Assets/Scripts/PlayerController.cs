@@ -126,6 +126,7 @@ public class PlayerController : MonoBehaviour
 			{
 				lighting.TimeofDay = 5;
 				stats.stamina = 100;
+				stats.health = 100;
 				DayManager.instance.dayNumber += 1;
 			}
 			inShelter = false;
