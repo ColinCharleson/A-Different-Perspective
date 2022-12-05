@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class Inventory : MonoBehaviour
 
 	public GameObject shelter;
 	public Stats stats;
+
+	public Text display;
 	public void Awake()
 	{
 		if (!add)
@@ -38,5 +41,7 @@ public class Inventory : MonoBehaviour
 				Instantiate(shelter, this.transform.position + ((this.transform.forward * 2) - Vector3.up), this.transform.rotation);
 			}
 		}
+
+		display.text = "Inventory: \nTwig: " + twig + "\nLeaf: " + leaf + "\nMud: " + mud;
 	}
 }
