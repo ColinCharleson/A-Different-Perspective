@@ -9,7 +9,6 @@ public class Inventory : MonoBehaviour
 	public int twig;
     public int leaf;
     public int mud;
-    public int berry;
 
 	public GameObject shelter;
 	public Stats stats;

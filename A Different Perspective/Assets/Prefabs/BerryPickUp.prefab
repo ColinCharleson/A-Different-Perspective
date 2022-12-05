@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 3718545010358024734}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.185213, y: 0.28, z: 4.95}
-  m_LocalScale: {x: 0.33986497, y: 0.33986497, z: 0.33986497}
+  m_LocalScale: {x: 0.5903096, y: 0.5903098, z: 0.5903098}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -99,4 +99,5 @@ MonoBehaviour:
   twig: 0
   leaf: 0
   mud: 0
-  berry: 4
+  berry: 10
+  water: 0

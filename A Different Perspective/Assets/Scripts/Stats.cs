@@ -89,4 +89,24 @@ public class Stats : MonoBehaviour
             }
         }
     }
+    public void GetWater(float gain)
+    {
+        if (gain > 0)
+        {
+            if (water < 90)
+                water += gain;
+            else
+                water = 100;
+        }
+    }
+    public void GetFood(float gain)
+    {
+        if (gain > 0)
+        {
+            if (hunger < 90)
+                hunger += gain;
+            else
+                hunger = 100;
+        }
+    }
 }

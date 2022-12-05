@@ -88,7 +88,10 @@ public class PlayerController : MonoBehaviour
 						Inventory.add.twig += obj.transform.GetComponent<Grabbable>().twig;
 						Inventory.add.leaf += obj.transform.GetComponent<Grabbable>().leaf;
 						Inventory.add.mud += obj.transform.GetComponent<Grabbable>().mud;
-						Inventory.add.berry += obj.transform.GetComponent<Grabbable>().berry;
+						stats.GetWater(obj.transform.GetComponent<Grabbable>().water);
+						stats.GetFood(obj.transform.GetComponent<Grabbable>().berry);
+
+						if(!obj.name.Contains("Water"))
 						Destroy(obj.transform.gameObject);
 					}
 					else

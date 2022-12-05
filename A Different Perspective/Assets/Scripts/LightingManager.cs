@@ -11,7 +11,7 @@ public class LightingManager : MonoBehaviour
   [SerializeField] private Lighting Preset;
     //variables
   [SerializeField, Range(0,24)] public float TimeofDay = 10;
-    private float timeCOunter = 0.1f;
+    private float timeCounter = 0.2f;
 
 
     private void Update()
@@ -24,7 +24,7 @@ public class LightingManager : MonoBehaviour
         }
         if(Application.isPlaying)
         {
-            TimeofDay += timeCOunter * Time.deltaTime;
+            TimeofDay += timeCounter * Time.deltaTime;
             TimeofDay %= 24;
             UpdateLighting(TimeofDay / 24);
         }
