@@ -10,6 +10,8 @@ public class Inventory : MonoBehaviour
     public int leaf;
     public int mud;
     public int berry;
+
+	public GameObject shelter;
 	public void Awake()
 	{
 		if (!add)
@@ -19,6 +21,17 @@ public class Inventory : MonoBehaviour
 		else
 		{
 			Destroy(gameObject);
+		}
+	}
+
+	private void Update()
+	{
+		if(Input.GetKeyDown(KeyCode.Alpha1))
+		{
+			if(twig >= 4 && leaf >= 10 && mud >= 40)
+			{
+				Instantiate(shelter, this.transform.position + ((Vector3.forward * 2) - Vector3.up), Quaternion.identity);
+			}
 		}
 	}
 }
