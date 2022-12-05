@@ -346,6 +346,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSensitivity: 500
   grabArea: {fileID: 2061182941}
+  visualCharacter: {fileID: 921979962}
+  inShelter: 0
 --- !u!4 &182071163
 Transform:
   m_ObjectHideFlags: 0
@@ -1676,7 +1678,7 @@ GameObject:
   - component: {fileID: 921979965}
   - component: {fileID: 921979964}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
