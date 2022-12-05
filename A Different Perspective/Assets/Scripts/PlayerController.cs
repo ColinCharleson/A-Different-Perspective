@@ -15,7 +15,9 @@ public class PlayerController : MonoBehaviour
 	Camera cam;
 
 	public GameObject grabArea;
+	public GameObject visualCharacter;
 
+	public bool inShelter;
 	private void Start()
 	{
 		cam = GetComponentInChildren<Camera>();
@@ -25,9 +27,18 @@ public class PlayerController : MonoBehaviour
 	// Update is called once per frame
 	void FixedUpdate()
 	{
-		Movement();
-		Rotation();
-		PickingUp();
+		if (inShelter)
+		{
+			InShelter();
+			visualCharacter.SetActive(false);
+		}
+		else
+		{
+			visualCharacter.SetActive(true);
+			Movement();
+			Rotation();
+			Interact();
+		}
 	}
 
 	void Movement()
@@ -35,9 +46,9 @@ public class PlayerController : MonoBehaviour
 		if (Input.GetKey(KeyCode.W))
 			transform.position += (transform.forward * playerSpeed);
 		if (Input.GetKey(KeyCode.S))
-			transform.position += (transform.forward * -playerSpeed/2);
+			transform.position += (transform.forward * -playerSpeed / 2);
 		if (Input.GetKey(KeyCode.A))
-			transform.position += (transform.right * -playerSpeed/1.5f);
+			transform.position += (transform.right * -playerSpeed / 1.5f);
 		if (Input.GetKey(KeyCode.D))
 			transform.position += (transform.right * playerSpeed / 1.5f);
 
@@ -60,7 +71,7 @@ public class PlayerController : MonoBehaviour
 		cam.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
 		this.transform.Rotate(Vector3.up * mouseX);
 	}
-	void PickingUp()
+	void Interact()
 	{
 		GameObject[] pickUps = GameObject.FindGameObjectsWithTag("Grabbable");
 
@@ -70,13 +81,38 @@ public class PlayerController : MonoBehaviour
 			{
 				if (Vector3.Distance(grabArea.transform.position, obj.transform.position) < 1)
 				{
-					Inventory.add.twig += obj.transform.GetComponent<Grabbable>().twig;
-					Inventory.add.leaf += obj.transform.GetComponent<Grabbable>().leaf;
-					Inventory.add.mud += obj.transform.GetComponent<Grabbable>().mud;
-					Inventory.add.berry += obj.transform.GetComponent<Grabbable>().berry;
-					Destroy(obj.transform.gameObject);
+					if (obj.GetComponent<Grabbable>())
+					{
+						Inventory.add.twig += obj.transform.GetComponent<Grabbable>().twig;
+						Inventory.add.leaf += obj.transform.GetComponent<Grabbable>().leaf;
+						Inventory.add.mud += obj.transform.GetComponent<Grabbable>().mud;
+						Inventory.add.berry += obj.transform.GetComponent<Grabbable>().berry;
+						Destroy(obj.transform.gameObject);
+					}
+					else
+					{
+						inShelter = true;
+					}
 				}
 			}
 		}
+	}
+
+	void InShelter()
+	{
+		if (Input.GetKey(KeyCode.Space))
+		{
+			inShelter = false;
+		}
+
+		/*if(night)
+		{
+			Time = morning
+			Stats = full
+		}
+		else
+		{
+			Stats += Time.deltaTime * regenspeed
+		}*/
 	}
 }
